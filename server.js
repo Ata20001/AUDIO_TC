@@ -1,6 +1,11 @@
 const express = require('express');
-
+const dotenv = require('dotenv');
 const app = express();
+const connectDB = require('./config/db');
+
+// Connect to MongoDB
+dotenv.config();
+connectDB();
 
 app.get('/', (req, res) => {
     res.send('Ata haider');
